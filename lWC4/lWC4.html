@@ -1,0 +1,30 @@
+<!--Parent component of LWC5-->
+<template>
+    <lightning-card title="Account List" icon-name="standard:account">
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small">
+                <lightning-input label="find Account" value={searchkeyAccount} onchange={handleChangeAccount}>
+                </lightning-input>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout vertical-align="center">
+            
+           <template for:each={accounts} for:item="item">
+               <!--Adding Child Component-->
+                <c-l-w-c5 accounts={item} key={item.Id}></c-l-w-c5>
+                <!-- <lightning-layout-item padding="slds-m-around_medium" key={item.key}>
+                    <br> &nbsp;{item.Name}<br>
+                    {item.Industry}
+                </lightning-layout-item>-->
+            </template>
+            <!--<lightning-layout-item padding="around-small">
+                <c-l-w-c5></c-l-w-c5>
+            </lightning-layout-item>-->
+        </lightning-layout>
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small">
+                <lightning-button label="find Accounts" variant="brand" onclick={findAccounts}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

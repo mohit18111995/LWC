@@ -1,0 +1,40 @@
+<template>
+        <lightning-card title="Contact List" icon-name="standard:contact">
+            <lightning-layout vertical-align="center">
+                <lightning-layout-item padding="around-small">
+                    <lightning-input label="find contact" value={searchkey} onchange={handleChange}></lightning-input>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout vertical-align="center">
+                <template for:each={contacts} for:item="item">
+                    <lightning-layout-item padding="slds-m-around_medium" key={item.key}>
+                        <br> &nbsp;{item.LastName}
+                        <lightning-formatted-email value={item.Email}></lightning-formatted-email>
+                        <lightning-formatted-phone value={item.Phone}></lightning-formatted-phone>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </lightning-card>
+        <lightning-card title="Account List" icon-name="standard:account">
+                <lightning-layout vertical-align="center">
+                    <lightning-layout-item padding="around-small">
+                        <lightning-input label="find Account" value={searchkeyAccount} onchange={handleChangeAccount}></lightning-input>
+                    </lightning-layout-item>
+                </lightning-layout>
+                
+                <lightning-layout vertical-align="center">
+                    <lightning-layout-item padding="around-small">
+                        <lightning-button label="find Accounts" variant="brand" onclick={findAccounts}></lightning-button>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout vertical-align="center">
+                    <template for:each={accounts} for:item="item">
+                        <lightning-layout-item padding="slds-m-around_medium" key={item.key}>
+                            <lightning-formatted-text value={item.Name} ></lightning-formatted-text>&nbsp;
+                            {item.Industry}
+                           
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+            </lightning-card>
+    </template>
