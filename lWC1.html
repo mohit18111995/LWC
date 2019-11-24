@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Contact List" icon-name="standard:contact">
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="slds-m-around_medium">
+                <template for:each={getcon.data} for:item="item">
+                    {item.LastName}
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
