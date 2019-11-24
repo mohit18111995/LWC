@@ -1,0 +1,26 @@
+<!--Design Attribute in LWC|Use Label in LWC|Use Static resource in LWC-->
+<template>
+    <lightning-card title="Design Attribute in LWC" icon-name="custom:custom5">
+        {greeting}
+        {heading}
+        <p>
+            {label.LWC10}
+        </p>
+        <p>
+            <img src={label.LWC10Img}/>
+        </p>
+        <p>
+            {label.Id}
+        </p>
+        <p>
+            {label.ACCOUNT_OBJ.objectApiName}
+        </p>
+        <p>
+            {label.NAME_FIELD}
+            {label.lang}
+            {label.locale}
+            {label.currency}
+            {label.timezone}
+        </p>
+    </lightning-card>
+</template>
