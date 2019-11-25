@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="ContactInformation" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+            <template for:each={contacts} for:item="contact" for:index="index">
+                <div key={contact.Id}>
+                    Contact:{index}<br>
+                    <lightning-formatted-text value={contact.Name}></lightning-formatted-text>&nbsp;&nbsp;
+                    <lightning-formatted-text value={contact.Title}></lightning-formatted-text>
+                    {contact.Name},{index}, {contact.Title},{index}
+                </div>
+            </template>
+        </div>
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small">
+                <lightning-formatted-text value={UserId}></lightning-formatted-text>
+            </lightning-layout-item>
+            <lightning-layout-item padding="slds-m-around_medium">
+                <template for:each={map} for:item="item">
+                    {item.key}=={item.value}
+                </template>
+               
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item padding="around-small">
+                <template if:true={records}>
+                    There is Something
+                </template>
+                <lightning-button label="Submit" onclick={HandleClick}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
